@@ -14,7 +14,7 @@ public class Main {
             System.out.printf("명령)");
             String cmd = scanner.nextLine();
 
-            if(cmd.equals("/usr/article/write")) {
+            if(cmd.equals("write")) {
                 System.out.println("== 게시물 작성 ==");
 
                 int id = ++articleLastId;
@@ -28,9 +28,9 @@ public class Main {
                 Article data = new Article();
                 data.storage(id, title, body);
 
-                System.out.printf("%d번 게시물이 등록되었습니다.\n", id);
-
                 System.out.println(data);
+
+                System.out.printf("%d번 게시물이 등록되었습니다.\n", id);
             }
             else if(cmd.equals("exit")) {
                 System.out.println("게시판을 종료합니다.");
@@ -49,5 +49,9 @@ class Article {
         this.id = id;
         this.title = title;
         this.body = body;
+    }
+    @Override
+    public String toString() {
+        return String.format("id : %d, title : %s, body : %s", id, title, body);
     }
 }
