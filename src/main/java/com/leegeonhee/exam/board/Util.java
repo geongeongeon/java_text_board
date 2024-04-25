@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-class Util {
+public class Util {
     static Map<String, String> getParamsFromUrl(String url) {
         Map<String, String> params = new HashMap<>();
         String[] urlBits = url.split("\\?", 2);
